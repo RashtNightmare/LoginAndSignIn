@@ -15,19 +15,19 @@ class WalletSeeder extends Seeder
     public function run()
     {
         //`id`, `test_id`, `user_id`, `type`, `action`, `description`, `balance`, `deleted_at`, `created_at`, `updated_at`
-        $user=[
+        $wallet=[
             [1,1,'Type1','action1','description1',1],
             [2,2,'Type2','action2','description2',2],
             [3,3,'Type3','action3','description3',3]];
-            for($i=0;$i < count($user);$i++){
+            for($i=0;$i < count($wallet);$i++){
                 $j=0;
                  Wallet::query()->create([
-                     'test_id'=> $user[$i][$j],
-                     'user_id'=> $user[$i][$j]+1,
-                     'type'=> $user[$i][$j]+2,
-                     'action'=> $user[$i][$j]+3,
-                     'description'=> $user[$i][$j]+4,
-                     'balance'=> $user[$i][$j]+5,
+                     'test_id'=> $wallet[$i][$j],
+                     'user_id'=> $wallet[$i][$j+1],
+                     'type'=> $wallet[$i][$j+2],
+                     'action'=> $wallet[$i][$j+3],
+                     'description'=> $wallet[$i][$j+4],
+                     'balance'=> $wallet[$i][$j+5],
                     ]); 
          }
          Wallet::factory()->count(1)->create();

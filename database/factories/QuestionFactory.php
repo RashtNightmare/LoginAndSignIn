@@ -16,11 +16,11 @@ class QuestionFactory extends Factory
     {
         //`id`, `text`, `option1`, `option2`, `option3`, `option4`, `true_answer`, `test_id`, `created_at`, `updated_at` 
         $date_create_update = $this->faker->dateTimeBetween('-2 day' ,'-1 day');
-        $option1="option1" + $this->faker->text;
-        $option2="option2" + $this->faker->text;
-        $option3="option3" + $this->faker->text;
-        $option4="option4" + $this->faker->text;
-        $textQuestion="text" + $this->faker->text;
+        $option1="option1" . $this->faker->text;
+        $option2="option2" . $this->faker->text;
+        $option3="option3" . $this->faker->text;
+        $option4="option4" . $this->faker->text;
+        $textQuestion="text" . $this->faker->text;
         return [
             'text'=> $textQuestion,
             'option1'=> $option1,

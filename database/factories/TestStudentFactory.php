@@ -12,7 +12,7 @@ class TestStudentFactory extends Factory
      *
      * @return array
      */
-    protected $model = \App\Models\TestSTudent::class;
+    protected $model = \App\Models\TestStudent::class;
     public function definition()
     {
         //`id`, `user_id`, `test_id`, `score`, `status`, `paid`, `canceled`, `created_at`, `updated_at`

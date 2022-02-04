@@ -15,15 +15,15 @@ class LessonSeeder extends Seeder
     public function run()
     {
          //`id`, `name`, `major_id`, `created_at`, `updated_at`
-         $user=[
+         $lesson=[
             ['NameLesson1',1],
             ['NameLesson2',2],
             ['NameLesson3',3]];
-            for($i=0;$i < count($user);$i++){
+            for($i=0;$i < count($lesson);$i++){
                 $j=0;
                  Lesson::query()->create([
-                     'name'=> $user[$i][$j]
-                     ,'major_id'=>$user[$i][$j+1]
+                     'name'=> $lesson[$i][$j]
+                     ,'major_id'=>$lesson[$i][$j+1]
                     ]); 
          }
          Lesson::factory()->count(1)->create();

@@ -14,14 +14,14 @@ class MajorSeeder extends Seeder
      */
     public function run()
     { //`id`, `name`, `created_at`, `updated_at`
-        $user=[
+        $major=[
            ['NameMajor1'],
            ['NameMajor2'],
            ['NameMajor3']];
-           for($i=0;$i < count($user);$i++){
+           for($i=0;$i < count($major);$i++){
                $j=0;
                 Major::query()->create([
-                    'name'=> $user[$i][$j]
+                    'name'=> $major[$i][$j]
                    ]); 
         }
         Major::factory()->count(1)->create();

@@ -15,19 +15,19 @@ class TestStudentSeeder extends Seeder
     public function run()
     {
         //`id`, `user_id`, `test_id`, `score`, `status`, `paid`, `canceled`, `created_at`, `updated_at`
-          $user=[
+          $test_student=[
             [1,1,1,true,true,false],
             [2,2,2,true,true,false],
             [3,3,3,true,true,false]];
-            for($i=0;$i < count($user);$i++){
+            for($i=0;$i < count($test_student);$i++){
                 $j=0;
                  TestSTudent::query()->create([
-                     'user_id'=> $user[$i][$j],
-                     'test_id'=> $user[$i][$j]+1,
-                     'score'=> $user[$i][$j]+2,
-                     'status'=> $user[$i][$j]+3,
-                     'paid'=> $user[$i][$j]+4,
-                     'canceled'=> $user[$i][$j]+5,
+                     'user_id'=> $test_student[$i][$j],
+                     'test_id'=> $test_student[$i][$j+1],
+                     'score'=> $test_student[$i][$j+2],
+                     'status'=> $test_student[$i][$j+3],
+                     'paid'=> $test_student[$i][$j+4],
+                     'canceled'=> $test_student[$i][$j+5],
                     ]); 
          }
          TestSTudent::factory()->count(1)->create();

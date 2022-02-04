@@ -16,15 +16,15 @@ class BalanceSeeder extends Seeder
     {
         //'user_id','amount'
         
-        $user=[
+        $ballance=[
             [1,1000],
             [2,2000],
             [3,3000]];
-            for($i=0;$i < count($user);$i++){
+            for($i=0;$i < count($ballance);$i++){
                 $j=0;
                  Balance::query()->create([
-                     'user_id'=> $user[$i][$j]
-                     ,'amount'=>$user[$i][$j+1]
+                     'user_id'=> $ballance[$i][$j]
+                     ,'amount'=>$ballance[$i][$j+1]
                     ]); 
          }
          Balance::factory()->count(1)->create();

@@ -31,9 +31,22 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('identity_card')->unique();
+            $table->string('national_code')->unique();
+            $table->string('mobile')->unique();
+            $table->string('username')->unique();
             $table->string('password');
+            // $table->string('email')->unique();
+            $table->string('avatar');
+            $table->foreignId('role_id');
+            $table->foreignId('major_id');
+            // $table->timestamp('mobile_verified_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            // $table->timestamp('email_verified_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('mobile_verified_at')->nullable();
+            $table->timestamp('email_verified_at')->nullable();
+            // $table->string('password');
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

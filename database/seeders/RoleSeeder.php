@@ -14,14 +14,14 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {  //`id`, `name`, `created_at`, `updated_at`
-        $user=[
+        $role=[
             ['name1'],
             ['name2'],
             ['name3']];
-            for($i=0;$i < count($user);$i++){
+            for($i=0;$i < count($role);$i++){
                 $j=0;
                  Role::query()->create([
-                     'name'=> $user[$i][$j],
+                     'name'=> $role[$i][$j],
                     ]); 
          }
          Role::factory()->count(1)->create();
