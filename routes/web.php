@@ -49,7 +49,7 @@ Route::get('/test_student/all',[TestStudentController::class,'index']);
 Route::get('/test/all',[TestController::class,'index']);
 Route::get('/role/all',[RoleController::class,'index']);
 Route::get('/question/all',[QuestionController::class,'index']);
-Route::get('/payment/all',[Payment::class,'index']);
+Route::get('/payment/all',[PaymentController::class,'index']);
 Route::get('/major/all',[MajorController::class,'index']);
 Route::get('/lesson/all',[LessonController::class,'index']);
 Route::get('/buy_basket/all',[BuyBasketController::class,'index']);
