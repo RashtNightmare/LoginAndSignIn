@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 @extends('Bootstrap')
+
+
 @section("css")
 
 a:link {
@@ -80,23 +82,24 @@ float:right;
 }
 @endsection
 
-<body>
+@section('content')
+<body style="background-color:#00ffe1;">
 <div class="backdiv" style="margin-top:25%;margin-bottom:25%;margin-right:25%;margin-left:25%;">
 <div class="card">
 </div class="container" style="padding:10px 10px 10px 10px;">
 
-<div class="w-full max-w-xs">
-<form method ="POST" action="\user-sign\{{$users['id']}}" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-{{ csrf_field() }}
-{{ method_field('PATCH') }}
-<table>
+<form  method ="POST" action="/user-sign">
+{{ csrf_field() }} 
+
+<div>
+ <table>
     <colgroup>
        <col span="2" style="background-color:white">
        <col style="background-color:yellow">
     </colgroup>
   
     <tr><th>
-    <div class="form-group"><label id="login_label" name="login_label" style="margin-bottom:20px;font: 30px icon;text-align:left"> Upgrade </label></div>
+    <div class="form-group"><label id="login_label" name="login_label" style="margin-bottom:20px;font: 30px icon;text-align:left"> Sign-In </label></div>
     
     <div class="form-group">
      <label name="l_username" id="l_username" hidden>User Name</label> 
@@ -104,7 +107,7 @@ float:right;
      <div class="input-group-addon">
      <i class="fas fa-user"></i>
      </div>
-     <input onkeyup="user_name()" value="{{$users['name']}}" class="form-control"  id="name" type="text" name="name" placeholder="User Name"></input>
+     <input onkeyup="user_name()" class="form-control"  id="name" type="text" name="name" placeholder="User Name"></input>
       <script>
         function user_name(){
          l_username=document.getElementById("l_username");
@@ -122,7 +125,7 @@ float:right;
      <div class="input-group-addon">
      <i class="fas fa-envelope" style="display: inline;"></i>
      </div>
-   <input onkeyup="email()" value="{{$users['email']}}" class="form-control" id="email" type="email" name="email" placeholder="E-mail"></input>
+   <input onkeyup="email()" class="form-control" id="email" type="email" name="email" placeholder="E-mail"></input>
       <script>
         function email(){
          l_email=document.getElementById("l_email");
@@ -140,7 +143,7 @@ float:right;
      <div class="input-group-addon">
      <i class="fas fa-lock" style="display: inline;"></i>
      </div>
-   <input onkeyup="password()" value="{{$users['password']}}" class="form-control" id="password" type="password" name="password" placeholder="Password"></input>
+   <input onkeyup="password()" class="form-control" id="password" type="password" name="password" placeholder="Password"></input>
       <script>
         function password(){
          l_password=document.getElementById("l_password");
@@ -158,7 +161,7 @@ float:right;
      <div class="input-group-addon">
      <i class="fas fa-lock" style="display: inline;"></i>
      </div>
-   <input onkeyup="re_password()" value="{{$users['password']}}" class="form-control" id="re_password" type="password" name="re_password" placeholder="RePassword"></input>
+   <input onkeyup="re_password()" class="form-control" id="re_password" type="password" name="re_password" placeholder="RePassword"></input>
       <script>
         function re_password(){
             l_re_password=document.getElementById("l_re-password");
@@ -174,28 +177,27 @@ float:right;
      <div class="form-group"><label>I agree and accept all the <u><a href="#" _blank>Terms of service</a></u> </label>
      <input type="checkbox" class="main" id="remember_checkbox" name="remember_checkbox"></input></div>
 
-     <button name="login_btn" onclick="ClickLogin()" id="login_btn" class="btn btn-info" style="color:white;background-color:#1049e6;margin-top:5px;width:100%" type="submit">Register</button>
-     <script>
-      function ClickLogin(){
-          if (document. getElementById('login_btn'). clicked == true) {
-              alert("button was clicked");
-          }
-      }
-     </script>
+     <button name="login_btn" id="login_btn" class="btn btn-info" style="color:white;background-color:#1049e6;margin-top:5px;width:100%" type="submit">Register</button>
+
 
 <!-- <input   id="password2" type="password2" name="password" placeholder="Password"> -->
 
 
 </th>
 
-<div class="form-group"><th><img src="{{url('/Images/upgrade.png')}}" style="margin-left:10px;" width="400" height="300" alt="Image"/>
+<div class="form-group"><th><img src="{{url('/Images/sigin.png')}}" style="margin-left:10px;" width="400" height="300" alt="Image"/>
    </div>
-   <div class="form-group"><u><a href="/user-login/create" style="margin-left:50%;" _blank>I am already a member</a></u></div>
+   <div class="form-group"><u><a href="/log-in" style="margin-left:50%;" _blank>I am already a member</a></u></div>
 
 </th></tr>
 
  </table>
+ 
 
-  </form></div>
-  </body></div></div></div>
+</div></form> 
+  
+
+</div></div></div>
+
+</body>
 <html>

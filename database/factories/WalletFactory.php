@@ -17,7 +17,7 @@ class WalletFactory extends Factory
         // `id`, `test_id`, `user_id`, `type`, `action`, `description`, `balance`, `deleted_at`, `created_at`, `updated_at
         $date_create_update = $this->faker->dateTimeBetween('-2 day' ,'-1 day');
         $type="Type ". $this->faker->text;
-        $action="Type ". $this->faker->text;
+        $action="Action ". $this->faker->text;
         $description="Description ". $this->faker->text;
 
         return [

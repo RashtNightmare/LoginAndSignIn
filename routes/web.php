@@ -1,7 +1,19 @@
 <?php
 
+use App\Http\Controllers\BalanceController;
+use App\Http\Controllers\BuyBasketController;
+use App\Http\Controllers\LessonController;
+use App\Http\Controllers\MajorController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserLoginController;
 use App\Http\Controllers\SignInController;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\TestStudentController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\WalletController;
+use App\Models\Payment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,53 +34,30 @@ Route::get('/welcome', function () {
 Route::get('/menu', function () {
     return view('menu_new');
 });
-//------------------------------------------------1
-Route::get('/user-sign/create',function(){
-    return view('SignIn.sign_in');
+Route::get('/sign-in', function () {
+    return view('SignIn_Login.sign_in');
 });
-Route::get('/user-login/page',function(){
-    return view('Login.login');
+Route::get('/log-in', function () {
+    return view('SignIn_Login.login');
 });
-Route::get('/user-sign', 'SignInController@index');
-Route::get('/user-sign/{user_sign}/edit', 'SignInController@edit');
 
-Route::get('/user-login', 'UserLoginController@index');
-Route::get('/user-login/{user_login}/edit', 'UserLoginController@edit');
-//------------------------------------------------
-Route::resource('/user-sign',SignInController::class);
-Route::resource('/user-login',UserLoginController::class);
-//Route::post('/user-sign',[App\Http\Controllers\SignInController::class,'store']);
-//------------------------------------------------
-Route::get('user-sign', 'App\Http\Controllers\SignInController@index');
-Route::get('user-login', 'App\Http\Controllers\UserLoginController@index');
-// Route::get('user-login', 'App\Http\Controllers\LoginController@index');
-// Route::get('user-login/{user_login}/edit', 'App\Http\Controllers\LoginController@edit');
-Route::get('user-sign/{user_sign}/edit', 'App\Http\Controllers\SignInController@edit');
-Route::get('user-login/{user_login}/edit', 'App\Http\Controllers\UserLoginController@edit');
+Route::get('/user_login/login',[UserLoginController::class,'show_login']);
+
+
+Route::resource('/wallet',WalletController::class);
+Route::resource('/user',UserController::class);
+Route::resource('/test_student',TestStudentController::class);
+Route::resource('/test',TestController::class);
+Route::resource('/role',RoleController::class);
+Route::resource('/question',QuestionController::class);
+Route::resource('/payment',PaymentController::class);
+Route::resource('/major',MajorController::class);
+Route::resource('/lesson',LessonController::class);
+Route::resource('/buy_basket',BuyBasketController::class);
+Route::resource('/balance',BalanceController::class);
+Route::resource('/user_login',UserLoginController::class);
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//----------------------------------------------------------------------------------------------------------------
-
-// Route::get('/log-in', function () {
-//     return view('Login.login');
-// });
-// Route::get('/sign-in', function () {
-//     return view('SignIn.sign_in');
-// });
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::resource('user-sign', 'App\Http\Controllers\SignInController');
-
-// Route::get('/all/all',[SignInController::class,'index']);
-
-
-// Route::get('/user-sign/create',function(){
-//     return view('SignIn.sign_in');
-// });
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
