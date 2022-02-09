@@ -32,7 +32,7 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 Route::get('/menu', function () {
-    return view('menu_new');
+    return view('menu');
 });
 Route::get('/sign-in', function () {
     return view('SignIn_Login.sign_in');
@@ -42,6 +42,32 @@ Route::get('/log-in', function () {
 });
 
 Route::get('/user_login/login',[UserLoginController::class,'show_login']);
+//-------------------------------------------------------------------------CREATE
+Route::get('/wallet/all',[WalletController::class,'index']);
+Route::get('/user/all',[UserController::class,'index']);
+Route::get('/test_student/all',[TestStudentController::class,'index']);
+Route::get('/test/all',[TestController::class,'index']);
+Route::get('/role/all',[RoleController::class,'index']);
+Route::get('/question/all',[QuestionController::class,'index']);
+Route::get('/payment/all',[Payment::class,'index']);
+Route::get('/major/all',[MajorController::class,'index']);
+Route::get('/lesson/all',[LessonController::class,'index']);
+Route::get('/buy_basket/all',[BuyBasketController::class,'index']);
+Route::get('/balance/all',[BalanceController::class,'index']);
+
+//-------------------------------------------------------------------------SHOW ALL
+Route::get('/wallet/create', function () {return view('Wallet.create');});
+Route::get('/user/create', function () {return view('User.create');});
+Route::get('/test_student/create', function () {return view('TesSTudent.create');});
+Route::get('/test/create', function () {return view('Test.create');});
+Route::get('/role/create', function () {return view('Role.create');});
+Route::get('/question/create', function () {return view('Question.create');});
+Route::get('/payment/create', function () {return view('Payment.create');});
+Route::get('/major/create', function () {return view('Major.create');});
+Route::get('/lesson/create', function () {return view('Lesson.create');});
+Route::get('/buy_basket/create', function () {return view('BuyBasket.create');});
+Route::get('/balance/create', function () {return view('Balance.create');});
+
 
 
 Route::resource('/wallet',WalletController::class);
