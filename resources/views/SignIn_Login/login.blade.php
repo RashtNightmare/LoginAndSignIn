@@ -68,7 +68,7 @@ float:right;
 <div class="card">
 </div class="container" style="padding:10px 10px 10px 10px;">
 
-<form  method ="GET" action="user_login/login">
+<form  method ="GET" action="/user_login/login">
 {{ csrf_field() }} 
 
 <div>
