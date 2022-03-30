@@ -35,7 +35,7 @@
                                     <input
                                         :style="mgcss"
                                         id="password"
-                                        type="text"
+                                            type="password"
                                         class="form-control"
                                         v-model="FormData.password"
                                         name="password"
@@ -47,7 +47,7 @@
                                         <input
                                             :style="mgcss"
                                             id="password_confirm"
-                                            type="text"
+                                            type="password"
                                             class="form-control"
                                             v-model="FormData.password_confirm"
                                             name="password_confirm"

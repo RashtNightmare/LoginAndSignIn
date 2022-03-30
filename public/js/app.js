@@ -5433,7 +5433,6 @@ window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js
 
 Vue.component('example-component', (__webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]));
 Vue.component('registration-form-component', (__webpack_require__(/*! ./components/RegisterationForm.vue */ "./resources/js/components/RegisterationForm.vue")["default"]));
-Vue.component('table-all-component', Object(function webpackMissingModule() { var e = new Error("Cannot find module './components/TableAll.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -28220,7 +28219,7 @@ var render = function () {
                   style: _vm.mgcss,
                   attrs: {
                     id: "password",
-                    type: "text",
+                    type: "password",
                     name: "password",
                     placeholder: "Password",
                     required: "required",
@@ -28251,7 +28250,7 @@ var render = function () {
                   style: _vm.mgcss,
                   attrs: {
                     id: "password_confirm",
-                    type: "text",
+                    type: "password",
                     name: "password_confirm",
                     placeholder: "Password-Confirm",
                     required: "required",
