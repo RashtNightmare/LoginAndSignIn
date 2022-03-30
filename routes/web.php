@@ -24,9 +24,7 @@ Route::resource('/post',PostController::class);
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::post('/doRegister',"\App\Http\Controllers\UserController@doRegister");
 Auth::routes();
 
